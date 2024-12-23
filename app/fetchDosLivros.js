@@ -1,6 +1,7 @@
 const sessionInserirLivros = document.getElementById("livros");
 
 function inserirLivrosNoHtml(listaDeLivros) {
+    sessionInserirLivros.innerHTML = '';
     listaDeLivros.forEach(livro => {
         sessionInserirLivros.innerHTML += `
         <div class="livro">
