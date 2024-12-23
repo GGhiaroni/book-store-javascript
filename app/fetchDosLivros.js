@@ -3,9 +3,10 @@ const sessionInserirLivros = document.getElementById("livros");
 function inserirLivrosNoHtml(listaDeLivros) {
     sessionInserirLivros.innerHTML = '';
     listaDeLivros.forEach(livro => {
-        sessionInserirLivros.innerHTML += `
-        <div class="livro">
-      <img class="livro__imagens" src=${livro.imagem} alt=${livro.alt} />
+    const disponibilidade = livro.quantidade > 0 ? "livro__imagens" : "livro__imagens indisponivel";
+    sessionInserirLivros.innerHTML += `
+    <div class="livro">
+      <img class="${disponibilidade}" src=${livro.imagem} alt=${livro.alt} />
       <h2 class="livro__titulo">${livro.titulo}</h2>
       <p class="livro__descricao">${livro.autor}</p>
       <p class="livro__preco" id="preco">R$${livro.preco.toFixed(2)}</p>
