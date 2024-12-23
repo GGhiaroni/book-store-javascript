@@ -1,10 +1,12 @@
 const sessionInserirLivros = document.getElementById("livros");
+const informacaoValorTotalDosLivros = document.getElementById("valor_total_livros_disponiveis");
 
 function inserirLivrosNoHtml(listaDeLivros) {
-    sessionInserirLivros.innerHTML = '';
-    listaDeLivros.forEach(livro => {
-    const disponibilidade = livro.quantidade > 0 ? "livro__imagens" : "livro__imagens indisponivel";
-    sessionInserirLivros.innerHTML += `
+  informacaoValorTotalDosLivros.innerHTML = '';
+  sessionInserirLivros.innerHTML = '';
+  listaDeLivros.forEach(livro => {
+  const disponibilidade = livro.quantidade > 0 ? "livro__imagens" : "livro__imagens indisponivel";
+  sessionInserirLivros.innerHTML += `
     <div class="livro">
       <img class="${disponibilidade}" src=${livro.imagem} alt=${livro.alt} />
       <h2 class="livro__titulo">${livro.titulo}</h2>
